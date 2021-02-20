@@ -27,11 +27,13 @@ passport.use(
         if (user) {
           const tokens = await authenticate(user)
           next(null, { user, tokens })
+          console.log('the user is there')
         } else {
           const createdUser = new UserModel(newUser)
           await createdUser.save()
           const tokens = await authenticate(createdUser)
-          next(null, { user: createdUser, tokens })
+          console.log('no user around')
+          next(null, { user: createdUser, refreshTokens })
         }
       } catch (error) {
         next(error)
