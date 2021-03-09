@@ -10,6 +10,7 @@ usersRouter.get("/", basic, adminOnly, async (req, res, next) => {
     res.send(users)
   } catch (error) {
     next(error)
+    console.log(error)
   }
 })
 
