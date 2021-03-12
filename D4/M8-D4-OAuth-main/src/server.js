@@ -7,7 +7,7 @@ const passport = require("passport")
 const cookieParser = require("cookie-parser")
 
 const usersRouter = require("./services/users")
-const oauth = require("./services/auth/oauth")
+const oauth = require("./services/auth/oauth") // no need to call it anywhere
 
 const {
   notFoundHandler,

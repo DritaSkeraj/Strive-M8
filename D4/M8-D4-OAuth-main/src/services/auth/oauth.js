@@ -23,7 +23,7 @@ passport.use(
 
       try {
         const user = await UserModel.findOne({ googleId: profile.id })
-
+        console.log(user)
         if (user) {
           const tokens = await authenticate(user)
           next(null, { user, tokens })
